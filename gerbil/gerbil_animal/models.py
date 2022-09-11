@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Gerbil(models.Mode):
+class Gerbil(models.Model):
 
     GERBIL_COLOR = (
         ('WH', 'white'),
@@ -16,6 +16,7 @@ class Gerbil(models.Mode):
         ('m', 'male')
     )
     name = models.CharField(max_length=30)
-    color = models.CharField(max_length=1, choices=GERBIL_COLOR)
+    color = models.CharField(max_length=5, choices=GERBIL_COLOR)
     age = models.IntegerField()
-    sex = models.CharField(max_length=1, choices=GERBIL_SEX)
+    sex = models.CharField(max_length=2, choices=GERBIL_SEX)
+    id = models.BigAutoField(primary_key=True)
