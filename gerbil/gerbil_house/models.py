@@ -10,5 +10,6 @@ class House(models.Model):
 
     capacity = models.IntegerField()
     material = models.CharField(max_length=30, choices=HOUSE_MATERIAL)
+    color = models.CharField(max_length=30)
 
 
