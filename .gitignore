@@ -13,6 +13,12 @@
 # Added files from current project
 .idea
 /venv
+**__pycache__**
+**/migrations/
+**/db.sqlite3
+*.pyc
+.idea/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
