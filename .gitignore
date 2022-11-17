@@ -13,6 +13,10 @@
 # Added files from current project
 .idea
 /venv
+**__pycache__**
+/gerbil/gerbil_animal/migrations
+gerbil/db.sqlite3
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
