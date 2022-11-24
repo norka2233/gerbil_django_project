@@ -20,7 +20,7 @@ class Gerbil(models.Model):
     color = models.CharField(max_length=5, choices=GERBIL_COLOR)
     age = models.IntegerField()
     sex = models.CharField(max_length=2, choices=GERBIL_SEX)
-    id = models.BigAutoField(primary_key=True)
+    id = models.IntegerField(primary_key=True)
 
     def eat(self):
         return "Gerbil eats"
