@@ -1,0 +1,1 @@
+{% if gerbil_list %}    <ul>        {% for gerbil in gerbil_list%}            <li><a href="/gerbil_animal/ {{gerbil.name}}/">{{gerbil.name}}            </a></li>        {% endfor %}    </ul>{% else %}    <p> No available </p>{% endif %}
