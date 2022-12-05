@@ -1,1 +1,1 @@
-from django.urls import pathfrom . import viewsurlpatterns = [    path('', views.index, name='index')]
+from django.urls import pathfrom . import viewsurlpatterns = [    path('', views.index, name='index'),    path('<int:gerbil_id>', views.gerbil_presentation, name='gerbil_presentation')]

@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Cage(models.Model):
 
     CAGE_MATERIAL = [
