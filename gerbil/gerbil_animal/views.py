@@ -10,7 +10,7 @@ def index(request):
     context = {
         'gerbil_list': gerbil_list,
     }
-    template = loader.get_template('gerbil_animal/index.html')
+    template = loader.get_template('gerbil_animal/homepage.html')
     return HttpResponse(template.render(context, request))
 
 
