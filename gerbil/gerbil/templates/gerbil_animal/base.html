@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        {% bootstrap_messages %}
+        {% load static %}
+        <link rel="shortcut icon" type="image/ico" href="{% static 'pictures/gerbil_favicon.ico' %}"/>
+
+    </head>
+    <body>
+        <div class="navigation_bar">
+            <input type="checkbox" id="ham-menu">
+            <label for="ham-menu">
+                <div class="hide-des">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </div>
+
+            </label>
+            <div class="full-page-green"></div>
+            <div class="ham-menu">
+                <ul class="centre-text bold-text">
+                    <li>Gerbils</li>
+                    <li>Cages</li>
+                    <li>Houses</li>
+                </ul>
+                <div class="animated_animal">
+                    <a> <img src="https://www.animatedimages.org/data/media/213/animated-mouse-image-0079.gif" alt="animated-mouse-image-0079" /></a>
+                </div>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

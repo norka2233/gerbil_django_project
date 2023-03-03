@@ -1,0 +1,21 @@
+html {
+  background-color: #95BDFF;
+}
+
+.gerbil_page_text {
+    flex: auto;
+    background-color: #95BDFF;
+
+
+ }
+
+h1 {
+    color: #777;
+    word-spacing: 0.2em;
+    font-weight: normal;
+    font-size: 70px;
+    text-align: center;
+    margin-top: 10%;
+    letter-spacing: -0.1em;
+
+}
