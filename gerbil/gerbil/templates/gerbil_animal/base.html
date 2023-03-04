@@ -10,10 +10,13 @@
         {% bootstrap_messages %}
         {% load static %}
         <link rel="shortcut icon" type="image/ico" href="{% static 'pictures/gerbil_favicon.ico' %}"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
 
     </head>
     <body>
-        <div class="navigation_bar">
+        <div class="navigation_bar" id="navbar">
             <input type="checkbox" id="ham-menu">
             <label for="ham-menu">
                 <div class="hide-des">
@@ -40,5 +43,6 @@
         </div>
         {% block content %}
         {% endblock %}
+        <script src="{% static 'gerbil_animal/gerbilpage.js' %}"></script>
     </body>
 </html>

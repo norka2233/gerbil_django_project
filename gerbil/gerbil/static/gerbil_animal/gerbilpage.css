@@ -1,12 +1,9 @@
-html {
+
+body {
   background-color: #95BDFF;
 }
-
 .gerbil_page_text {
-    flex: auto;
     background-color: #95BDFF;
-
-
  }
 
 h1 {
@@ -15,7 +12,57 @@ h1 {
     font-weight: normal;
     font-size: 70px;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 8%;
     letter-spacing: -0.1em;
+    }
+
+.profiles_block {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    background-color: #B4E4FF;
+    width 90%;
+    border-radius: 15px;
+    border: 2px solid #777;
+    margin: 3% 1%;
 
 }
+
+.profile_box {
+    display: flex;
+    margin: 2% 2%;
+    width: 45%
+}
+
+.gerbil_picture_file {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    float: left;
+    border-radius: 15px;
+    border: 2px solid #777;
+}
+
+.profile_text_info {
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid #777;
+    background-color: #F7C8E0;
+    margin-left: 2%;
+    width: 35%;
+    height: 70%;
+    font-family: Oswald;
+    font-weight: bold;
+    font-color: #777;
+    margin-top: 4%;
+    margin-left: 7.5%;
+}
+
+.profile_point {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.4em;
+    margin-top: 4%;
+}
+
