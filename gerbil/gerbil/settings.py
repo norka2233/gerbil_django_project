@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gerbil_cage',
     'gerbil_house',
+    'gerbil_specific',
     'bootstrap5',
 ]
 
