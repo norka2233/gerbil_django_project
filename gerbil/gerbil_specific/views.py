@@ -1,7 +1,24 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-# from gerbil.gerbil_animal.models import Gerbil
+from django.template import loader
+from .models import Gerbil
 
 
-def intro(request, id):
-    return HttpResponse(f"Here is your Specific Gerbil {id}")
+def index(request, id):
+    gerbil_list = Gerbil.objects.filter(id=id)
+    template = loader.get_template('gerbil_specific/base.html')
+
+    # a = [gerbil for gerbil in gerbil_list]
+    context = {
+        'gerbil_list': gerbil_list,
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def gerbil_presentation(request):
+    gerbil_list = Gerbil.objects.values().order_by('name')[:9]
+    a = [gerbil for gerbil in gerbil_list]
+    context = {
+        'gerbil_list': gerbil_list,
+    }
+    template = loader.get_template('gerbil_specific/base.html')
+    return HttpResponse(template.render(context, request))

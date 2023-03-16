@@ -1,0 +1,35 @@
+{% extends 'gerbil_animal/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'gerbil_specific/style.css' %}">
+<link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+<title>
+    {% for gerbil in gerbil_list %}
+    {{ gerbil.name }}
+    {% endfor %}
+</title>
+
+<div class="gerbil_specific_block">
+    <div class="gerbil_head_info">
+        <div class="gerbil_head">
+            {% for gerbil in gerbil_list %}
+            <h1>{{ gerbil.name }}</h1>
+            {% endfor %}
+        </div>
+
+        <div class="gerbil_info">
+            {% for gerbil in gerbil_list %}
+                <div> Color: {{ gerbil.color }} </div>
+                <div> Age: {{ gerbil.age }} </div>
+                <div> Sex: {{ gerbil.sex }} </div>
+                <div> ID: {{ gerbil.id }} </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
