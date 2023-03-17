@@ -1,35 +1,71 @@
 {% extends 'gerbil_animal/base.html' %}
 {% load static %}
 {% block content %}
-
+<html>
 <link rel="stylesheet" href="{% static 'gerbil_specific/style.css' %}">
 <link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+<!--<script src="{% static 'gerbil_specific/base.js' %}"></script>-->
+<script type="text/javascript">
+            function sleep() {
+                alert("Gerbil has slept a bit");
+            }
+            function drink() {
+                alert("Gerbil has drunk a bit");
+            }
+            function poop() {
+                alert("Gerbil has pooped a lot");
+            }
+            function groom() {
+                alert("Gerbil has groomed a bit");
+            }
+            function run() {
+                alert("Gerbil has run a bit");
+            }
+            function eat() {
+                alert("Gerbil has eaten a bit");
+            }
+</script>
 <title>
     {% for gerbil in gerbil_list %}
     {{ gerbil.name }}
     {% endfor %}
 </title>
+<div class="whole_body>">
+    <div class="gerbil_specific_block">
+        <div class="gerbil_head_info">
+            <div class="gerbil_head">
+                {% if gerbil_list%}
+                    {% for gerbil in gerbil_list %}
+                    <h1>{{ gerbil.name }}</h1>
+                    {% endfor %}
+                {% else %}
+                    <h1>No Gerbil with such ID </h1>
+                {% endif %}
+            </div>
 
-<div class="gerbil_specific_block">
-    <div class="gerbil_head_info">
-        <div class="gerbil_head">
-            {% for gerbil in gerbil_list %}
-            <h1>{{ gerbil.name }}</h1>
-            {% endfor %}
-        </div>
-
-        <div class="gerbil_info">
-            {% for gerbil in gerbil_list %}
-                <div> Color: {{ gerbil.color }} </div>
-                <div> Age: {{ gerbil.age }} </div>
-                <div> Sex: {{ gerbil.sex }} </div>
-                <div> ID: {{ gerbil.id }} </div>
-            {% endfor %}
+            <div class="gerbil_info">
+                {% for gerbil in gerbil_list %}
+                    <div> Color: {{ gerbil.color }} </div>
+                    <div> Age: {{ gerbil.age }} </div>
+                    <div> Sex: {{ gerbil.sex }} </div>
+                    <div> ID: {{ gerbil.id }} </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
+    {% if gerbil_list%}
+    <div class="middle">
+        <button href="#" class="btn btn1" onClick="sleep()">Sleep</button>
+        <button href="#" class="btn btn2" onClick="drink()">Drink</button>
+        <button href="#" class="btn btn3" onClick="poop()">Poop</button>
+        <button href="#" class="btn btn1" onClick="groom()">Groom</button>
+        <button href="#" class="btn btn2" onClick="run()">Run</button>
+        <button href="#" class="btn btn3" onClick="eat()">Eat</button>
+    </div>
+    {% endif %}
+    {% endblock %}
 </div>
-{% endblock %}
-
+</html>
