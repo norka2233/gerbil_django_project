@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+html {
+      background: #F7C8E0;
+}
+.whole_body {
+      background: #F7C8E0;
+}
+
+.gerbil_specific_block {
+     background: #F7C8E0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 15%;
+}
+
+.gerbil_head_info {
+      border-radius: 15px;
+      border: 2px solid #777;
+      padding: 3% 3%;
+      background: #B4E4FF
+}
+
+ .middle{
+   position: absolute;
+   margin-top: -8%;
+   left: 80%;
+   transform: translate(-50%, -50%);
+ }
+
+ .btn{
+   position:relative;
+   display:flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   flex-flow: column wrap;
+   font-size: 18px;
+   text-decoration: none;
+   margin: 30px 0;
+   padding: 15px 50px;
+   text-transform: uppercase;
+   overflow: hidden;
+   transition: 3s all ease;
+   width: 150px;
+ }
+ .btn1{
+   border: 2px solid #777;
+ }
+ .btn2{
+   border: 2px solid #777;
+ }
+ .btn3{
+   border: 2px solid #777;
+ }
+ .btn4{
+   border: 2px solid #777;
+ }
+
+ .btn::before{
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: -1;
+   transition: all 0.6s ease;
+ }
+ .btn1::before{
+   background: #DFFFD8;
+   width:0;
+   height: 100%;
+ }
+ .btn1:hover::before{
+   width: 100%;
+ }
+ .btn2::before{
+   background:#B4E4FF;
+   width: 100%;
+   height:0;
+ }
+ .btn2:hover::before{
+   height:100%;
+ }
+ .btn3::before{
+   background: #95BDFF;
+   width:100%;
+   height:0;
+   transform: translate(-50%,-50%) rotate(45deg);
+ }
+ .btn3:hover::before{
+   height:340%;
+ }
+ .btn4::before{
+   background: #DFFFD8;
+   width:100%;
+   height:0;
+   transform: translate(-50%,-50%) rotate(-45deg);
+ }
+ .btn4:hover::before{
+   height:360%;
+ }
