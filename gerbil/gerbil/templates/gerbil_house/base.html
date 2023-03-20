@@ -1,0 +1,44 @@
+{% extends 'gerbil_animal/base.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+    <link rel="stylesheet" href="{% static 'gerbil_house/style.css' %}">
+    <link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
+    <title>
+        {% for house in gerbil_house %}
+        {{ house.id }}
+        {% endfor %}
+    </title>
+    <div class="header">
+        <h1>🄶🄴🅁🄱🄸🄻 🄷🄾🅄🅂🄴🅂</h1>
+    </div>
+    <div class="house_block">
+        <div class="house_box">
+            <h3>House 1</h3>
+            <div>Capacity</div>
+            <div>Material</div>
+            <div>Color</div>
+            <div>Gerbil_id</div>
+            <div>Cage_id</div>
+        </div>
+        <div class="house_box">
+            <h3>House 1</h3>
+            <div>Capacity</div>
+            <div>Material</div>
+            <div>Color</div>
+            <div>Gerbil_id</div>
+            <div>Cage_id</div>
+        </div>
+        <div class="house_box">
+            <h3>House 1</h3>
+            <div>Capacity</div>
+            <div>Material</div>
+            <div>Color</div>
+            <div>Gerbil_id</div>
+            <div>Cage_id</div>
+        </div>
+    </div>
+    {% endblock %}
+    </div>
+</html>
