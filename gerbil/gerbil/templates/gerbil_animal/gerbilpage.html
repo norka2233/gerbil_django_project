@@ -1,0 +1,91 @@
+{% extends 'gerbil_animal/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'gerbil_animal/gerbilpage.css' %}">
+<link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+<title>Gerbil Page</title>
+
+
+<div class="gerbil_page_text">
+    <h1><b>🄷🄴🅁🄴 🅈🄾🅄 🄲🄰🄽 🄵🄸🄽🄳 🄰 🄻🄸🅂🅃 🄾🄵 🅈🄾🅄🅁 🄶🄴🅁🄱🄸🄻🅂</b> </h1>
+</div>
+
+<div class="profiles_block">
+    <div class="profile_box">
+        <div class="profile_picture">
+            <img class="gerbil_picture_file" src="{% static 'pictures/1_red_gerbil.jpeg' %}" alt="gerbil_logo" class="gerbil_logo" onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">
+        </div>
+        <div class="profile_text_info">
+            <div class="profile_point">
+                <div>Genkhis Khan</div>
+                <div>1</div>
+                <div>Red</div>
+                <div>3 years</div>
+                <div>Male</div>
+            </div>
+        </div>
+    </div>
+    <div class="profile_box">
+        <div class="profile_picture">
+            <img class="gerbil_picture_file" src="{% static 'pictures/2_black_gerbil.jpeg' %}" alt="gerbil_logo" class="gerbil_logo" onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">
+        </div>
+        <div class="profile_text_info">
+            <div class="profile_point">
+                <div>MiceKing</div>
+                <div>2</div>
+                <div>Black</div>
+                <div>1 year</div>
+                <div>Male</div>
+            </div>
+        </div>
+    </div>
+    <div class="profile_box">
+        <div class="profile_picture">
+            <img class="gerbil_picture_file" src="{% static 'pictures/3_grey_gerbil.webp' %}" alt="gerbil_logo" class="gerbil_logo" onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">
+        </div>
+        <div class="profile_text_info">
+            <div class="profile_point">
+                <div>Genkhis Khan</div>
+                <div>1</div>
+                <div>Red</div>
+                <div>3 years</div>
+                <div>Male</div>
+            </div>
+        </div>
+    </div>
+    <div class="profile_box">
+        <div class="profile_picture">
+            <img class="gerbil_picture_file" src="{% static 'pictures/1_red_gerbil.jpeg' %}" alt="gerbil_logo" class="gerbil_logo onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">
+        </div>
+        <div class="profile_text_info">
+            <div class="profile_point">
+                <div>Genkhis Khan</div>
+                <div>1</div>
+                <div>Red</div>
+                <div>3 years</div>
+                <div>Male</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!--        {% if gerbil_list %}-->
+<!--        <ul>-->
+<!--            {% for gerbil in gerbil_list%}-->
+<!--            <li>{{gerbil.name}}</li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
+<!--        {% else %}-->
+<!--        <p> No available </p>-->
+<!--        {% endif %}-->
+
+
+
+
+

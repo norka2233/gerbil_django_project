@@ -3,5 +3,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hey, here is your gerbil's house!")
-
+    return HttpResponse("Here is gerbil house")
