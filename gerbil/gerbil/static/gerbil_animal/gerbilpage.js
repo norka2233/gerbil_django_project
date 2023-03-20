@@ -1,11 +1,16 @@
-var prevScrollpos = window.pageYOffset;
+var link="http://127.0.0.1:8000/"
 
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-}
+    function redirect_gerbils() {
+        var url=document.getElementById('gerbils').value
+        window.location = link + "gerbil/"
+    }
+
+    function redirect_gerbils() {
+        var url=document.getElementById('cages').value
+        window.location = link + "cage/"
+    }
+
+    function redirect_gerbils() {
+        var url=document.getElementById('houses').value
+        window.location = link + "house/"
+    }

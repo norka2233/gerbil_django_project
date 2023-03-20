@@ -32,9 +32,9 @@
             <div class="full-page-green"></div>
             <div class="ham-menu">
                 <ul class="centre-text bold-text">
-                    <li href="http://127.0.0.1:8000/gerbil/">Gerbils</li>
-                    <li href="http://127.0.0.1:8000/cage/">Cages</li>
-                    <li href="http://127.0.0.1:8000/house/">Houses</li>
+                    <li href="http://127.0.0.1:8000/gerbil/" id="gerbils" onclick="redirect_gerbils()">Gerbils</li>
+                    <li href="http://127.0.0.1:8000/cage/" id="cages" onclick="redirect_cages()">Cages</li>
+                    <li href="http://127.0.0.1:8000/house/" id="houses" onclick="redirect_houses()">Houses</li>
                 </ul>
                 <div class="animated_animal">
                     <a> <img src="https://www.animatedimages.org/data/media/213/animated-mouse-image-0079.gif" alt="animated-mouse-image-0079" /></a>
@@ -43,6 +43,23 @@
         </div>
         {% block content %}
         {% endblock %}
-        <script src="{% static 'gerbil_animal/gerbilpage.js' %}"></script>
+<!--        <script src="{% static 'gerbil_animal/gerbilpage.js' %}"></script>-->
     </body>
+    <script>
+    const link="http://127.0.0.1:8000/"
+        function redirect_gerbils() {
+            var url=document.getElementById('gerbils').value
+            window.location = link + "gerbil/"
+        }
+
+        function redirect_cages() {
+            var url=document.getElementById('cages').value
+            window.location = link + "cage/"
+        }
+
+        function redirect_houses() {
+            var url=document.getElementById('houses').value
+            window.location = link + "house/"
+        }
+    </script>
 </html>
