@@ -4,8 +4,8 @@ from .models import Gerbil
 
 
 def index(request):
-    gerbil_list = Gerbil.objects.values().order_by('name')[:9]
-    a = [gerbil for gerbil in gerbil_list]
+    gerbil_list = Gerbil.objects.order_by('name')[:9]
+    # a = [gerbil for gerbil in gerbil_list]
     context = {
         'gerbil_list': gerbil_list,
     }
