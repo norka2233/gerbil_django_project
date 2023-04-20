@@ -12,11 +12,11 @@ class Gerbil(models.Model):
     ]
     name = models.CharField(max_length=30, null=False)
     age = models.IntegerField(null=False)
-    gerbil_sex = models.TextChoices('male', 'female')
-    gerbil_id = models.BigAutoField(primary_key=True, default=0)
+    gerbil_id = models.BigAutoField(primary_key=True)
     gerbil_color = models.CharField(choices=GERBIL_COLOR_CHOICES, max_length=5, null=False, default='N/A')
-    gerbil_cage_id = models.ForeignKey('gerbil_cage.Cage', on_delete=models.CASCADE, default=0, null=False)
-    gerbil_house_id = models.ForeignKey('gerbil_house.House', on_delete=models.CASCADE, default=0, null=False)
+    gerbil_cage_id = models.ForeignKey('gerbil_cage.Cage', on_delete=models.CASCADE)
+    gerbil_house_id = models.ForeignKey('gerbil_house.House', on_delete=models.CASCADE)
+    # gerbil_sex = models.TextChoices('male', 'female')
 
     def eat(self):
         return "Gerbil eats"

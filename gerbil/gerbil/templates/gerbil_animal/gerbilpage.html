@@ -16,64 +16,42 @@
 </div>
 
 <div class="profiles_block">
+    {% for gerbil in gerbil_list %}
     <div class="profile_box">
         <div class="profile_picture">
             <img class="gerbil_picture_file" src="{% static 'pictures/1_red_gerbil.jpeg' %}" alt="gerbil_logo" class="gerbil_logo" onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">
         </div>
         <div class="profile_text_info">
             <div class="profile_point">
-                <div>Genkhis Khan</div>
-                <div>1</div>
-                <div>Red</div>
-                <div>3 years</div>
-                <div>Male</div>
+                <div> {{ gerbil.name }} </div>
+                <div> ID: {{ gerbil.gerbil_id }}</div>
+                <div>{{ gerbil.age }} year(s)</div>
+                <div>{{ gerbil.color }} </div>
+                <div>{{ gerbil.gerbil_sex }}</div>
             </div>
         </div>
     </div>
-    <div class="profile_box">
-        <div class="profile_picture">
-            <img class="gerbil_picture_file" src="{% static 'pictures/2_black_gerbil.jpeg' %}" alt="gerbil_logo" class="gerbil_logo" onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">
-        </div>
-        <div class="profile_text_info">
-            <div class="profile_point">
-                <div>MiceKing</div>
-                <div>2</div>
-                <div>Black</div>
-                <div>1 year</div>
-                <div>Male</div>
-            </div>
-        </div>
-    </div>
-    <div class="profile_box">
-        <div class="profile_picture">
-            <img class="gerbil_picture_file" src="{% static 'pictures/3_grey_gerbil.webp' %}" alt="gerbil_logo" class="gerbil_logo" onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">
-        </div>
-        <div class="profile_text_info">
-            <div class="profile_point">
-                <div>Genkhis Khan</div>
-                <div>1</div>
-                <div>Red</div>
-                <div>3 years</div>
-                <div>Male</div>
-            </div>
-        </div>
-    </div>
-    <div class="profile_box">
-        <div class="profile_picture">
-            <img class="gerbil_picture_file" src="{% static 'pictures/1_red_gerbil.jpeg' %}" alt="gerbil_logo" class="gerbil_logo onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">
-        </div>
-        <div class="profile_text_info">
-            <div class="profile_point">
-                <div>Genkhis Khan</div>
-                <div>1</div>
-                <div>Red</div>
-                <div>3 years</div>
-                <div>Male</div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 {% endblock %}
+
+<!--    <div class="profile_box">-->
+<!--        <div class="profile_picture">-->
+<!--            <img class="gerbil_picture_file" src="{% static 'pictures/2_black_gerbil.jpeg' %}" alt="gerbil_logo" class="gerbil_logo" onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">-->
+<!--        </div>-->
+<!--        <div class="profile_text_info">-->
+<!--            <div class="profile_point">-->
+<!--                <div> {{ gerbil.name }} </div>-->
+<!--                <div> ID: {{ gerbil.gerbil_id }}</div>-->
+<!--                <div>{{ gerbil.age }} year(s)</div>-->
+<!--                <div>{{ gerbil.color }} </div>-->
+<!--                <div>{{ gerbil.gerbil_sex }}</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    </div>div-->
+<!--</div>-->
 
 <!--        {% if gerbil_list %}-->
 <!--        <ul>-->
