@@ -4,11 +4,12 @@ from django.template import loader
 from .models import Cage
 
 
+
 def index(request):
-    gerbil_cage = Cage.objects.values()
-    a = [gerbil for gerbil in gerbil_cage]
-    context = {
-        'gerbil_cage': gerbil_cage,
-    }
+    cage_objects = Cage.objects.all().values().order_by('-cage_id')
     template = loader.get_template('gerbil_cage/base.html')
+
+    context = {
+        'cage_objects': cage_objects,
+    }
     return HttpResponse(template.render(context, request))
