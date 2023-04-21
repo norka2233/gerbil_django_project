@@ -8,10 +8,6 @@ from .models import Gerbil
 def index(request):
     gerbil_objects = Gerbil.objects.all().values().order_by('-gerbil_id')
     gerbil_list = list(gerbil_objects)
-    gerbil_data = []
-    counter = 0
-    # for gerbil in gerbil_list:
-    #     gerbil_data.append(gerbil['name'])
     template = loader.get_template('gerbil_animal/gerbilpage.html')
     context = {
         'gerbil_list': gerbil_list,

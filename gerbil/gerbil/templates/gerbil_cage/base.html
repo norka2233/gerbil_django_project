@@ -5,43 +5,23 @@
 <html>
     <link rel="stylesheet" href="{% static 'gerbil_cage/style.css' %}">
     <link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
-    <title>
-        {% for cage in gerbil_cage %}
-        {{ cage.id }}
-        {% endfor %}
-    </title>
+
+    <title> Cage Page </title>
 
     <div class="header">
         <h1>🄶🄴🅁🄱🄸🄻 🄲🄰🄶🄴🅂</h1>
     </div>
     <div class="cage_block">
+        {% for cage in cage_objects %}
         <div class="cage_box">
-            <h3>Cage 1</h3>
-            <div>Capacity</div>
-            <div>Material</div>
-            <div>Color</div>
-            <div>Gerbil_id</div>
-            <div>House_id</div>
-
+            <h3>Cage </h3>
+            <div>Capacity {{ cage.cage_capacity }}</div>
+            <div>Material: {{ cage.cage_material }}</div>
+            <div>Color: {{ cage.cage_color }}</div>
+            <div>Cage ID: {{ cage.cage_id }}</div>
+            <div>Gerbil ID(s): {{ cage.gerbil_house_id_id }}</div>
         </div>
-        <div class="cage_box">
-            <h3>Cage 1</h3>
-            <div>Capacity</div>
-            <div>Material</div>
-            <div>Color</div>
-            <div>Gerbil_id</div>
-            <div>House_id</div>
-        </div>
-
-        <div class="cage_box">
-            <h3>Cage 1</h3>
-            <div>Capacity</div>
-            <div>Material</div>
-            <div>Color</div>
-            <div>Gerbil_id</div>
-            <div>House_id</div>
-        </div>
-
+        {% endfor %}
     </div>
     {% endblock %}
     </div>
