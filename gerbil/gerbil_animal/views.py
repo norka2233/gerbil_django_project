@@ -1,18 +1,46 @@
 import datetime
 
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.template import loader
 from .models import Gerbil
+from django.views.decorators.csrf import csrf_protect
+from django.views import generic
+from django.shortcuts import get_object_or_404
+
+from .forms import AddGerbilForm
 
 
 def index(request):
-    gerbil_objects = Gerbil.objects.all().values().order_by('-gerbil_id')
-    gerbil_list = list(gerbil_objects)
+    gerbil_list = list(Gerbil.objects.all().values().order_by('-gerbil_id'))
     template = loader.get_template('gerbil_animal/gerbilpage.html')
     context = {
         'gerbil_list': gerbil_list,
     }
     return HttpResponse(template.render(context, request))
+
+
+# @csrf_protect
+def add_gerbil_form(request):
+    if request.method == "POST":
+        form = AddGerbilForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('gerbil/success')
+    else:
+        form = AddGerbilForm()
+
+    return render(request, 'gerbil_animal/success.html', {"form": form})
+
+
+# class CreateGerbil(generic.CreateView):
+#
+#     model = Gerbil
+#     form_class = AddGerbilForm
+#     template_name = 'gerbil_animal/gerbilpage.html'
+#     success_url = '/gerbil/'
+#     extra_context = {'title': 'Create Gerbil'}
 
 
 # def gerbil_presentation(request):
