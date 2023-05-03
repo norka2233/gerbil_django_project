@@ -35,13 +35,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'gerbil_animal.apps.GerbilAnimalConfig',
+    # 'gerbil_animal.apps.GerbilAnimalConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'gerbil_animal',
     'gerbil_cage',
     'gerbil_house',
     'gerbil_specific',
