@@ -2,7 +2,6 @@ from django.db import models
 from django.db import models, IntegrityError, DataError
 
 
-
 class Gerbil(models.Model):
     GERBIL_COLOR_CHOICES = [
         ('wht', 'white'),
