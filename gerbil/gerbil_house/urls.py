@@ -1,1 +1,1 @@
-from django.urls import pathfrom . import viewsurlpatterns = [    path('', views.index, name='index')]
+from django.urls import pathfrom . import viewsurlpatterns = [    path('', views.index, name='index'),    path('success/', views.add_house_form, name='add_house_form'),]

@@ -46,3 +46,40 @@ h1 {
       margin-top: 3%;
       margin-left: 6%;
 }
+
+
+.form_houses_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    font-family: Oswald;
+    font-size: 24px;
+    margin-top: 3%;
+}
+
+.house_form {
+    width: 50%;
+    margin-left: 5%;
+    border-radius: 15px;
+}
+
+.material_disclaimer {
+    border-radius: 15px;
+    border: 2px solid #777;
+    margin: 0.5%;
+    text-align: center;
+}
+
+ul {
+    margin-top: 1%;
+}
+
+.available_house_material {
+    margin-left: 5%;
+}
+
+label, input, button {
+    margin: 0.5%;
+    text-align: center;
+}

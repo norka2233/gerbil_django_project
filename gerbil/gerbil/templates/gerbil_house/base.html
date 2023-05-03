@@ -2,33 +2,59 @@
 {% load static %}
 {% block content %}
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
     <link rel="stylesheet" href="{% static 'gerbil_house/style.css' %}">
     <link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
-    <title> Gerbil House </title>
+
+    <title> House Page </title>
 
     <div class="header">
         <h1>🄶🄴🅁🄱🄸🄻 🄷🄾🅄🅂🄴🅂</h1>
     </div>
-    <div class="house_block">
-        <div class="house_box">
-                <h3> House  </h3>
-                <div> Capacity </div>
-                <div> Material </div>
-                <div> Color </div>
-                <div> ID </div>
+    <div class="form_houses_block">
+        <div class="house_form">
+            <form action="success/" method="post">
+                <fieldset>
+                    {% csrf_token %}
+                    {{ form }}
+                    <div>
+                        <label for="house_capacity"> House Capacity: </label>
+                        <input id="house_capacity" type="number" name="house_capacity" required>
+                    </div>
+                    <div>
+                        <label for="house_material"> Material: </label>
+                        <input id="house_material" type="text" name="house_material" required>
+                    </div>
+                    <div>
+                        <label for="house_color"> House Color: </label>
+                        <input id="house_color" type="text" name="house_color" required>
+                    </div>
+                    <div>
+                        <label for="house_id"> House ID:</label>
+                        <input id="house_id" type="number" name="house_id" required>
+                    </div>
+                    <button type="submit" value="Add House"> Add House </button>
+                </fieldset>
+            </form>
         </div>
+        <div class="available_house_material">
+            <p class="material_disclaimer"> <b> Indicate House Material with abbreviations! </b> </p>
+            <ul>
+                <li> wood => wd </li>
+                <li> plastic => plstc </li>
+            </ul>
+        </div>
+    </div>
+    <div class="house_block">
         {% for house in house_list %}
         <div class="house_box">
-            <div> Capacity: {{ house.house_capacity }} </div>
+            <h3> House {{ house.house_id }}</h3>
+            <div> Capacity {{ house.cage_capacity }} </div>
             <div> Material: {{ house.house_material }} </div>
             <div> Color: {{ house.house_color }} </div>
-            <div> ID: {{ house.house_id }} </div>
         </div>
-
         {% endfor %}
     </div>
     {% endblock %}
+    </div>
 </html>
-
-
