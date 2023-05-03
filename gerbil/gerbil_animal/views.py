@@ -34,15 +34,6 @@ def add_gerbil_form(request):
     return render(request, 'gerbil_animal/success.html', {"form": form})
 
 
-# class CreateGerbil(generic.CreateView):
-#
-#     model = Gerbil
-#     form_class = AddGerbilForm
-#     template_name = 'gerbil_animal/gerbilpage.html'
-#     success_url = '/gerbil/'
-#     extra_context = {'title': 'Create Gerbil'}
-
-
 # def gerbil_presentation(request):
 #     gerbil_list = Gerbil.objects.values().order_by('name')[:9]
 #     for gerbil in gerbil_list:

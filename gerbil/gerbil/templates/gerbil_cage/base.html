@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
     <link rel="stylesheet" href="{% static 'gerbil_cage/style.css' %}">
     <link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
 
@@ -10,6 +10,45 @@
 
     <div class="header">
         <h1>🄶🄴🅁🄱🄸🄻 🄲🄰🄶🄴🅂</h1>
+    </div>
+    <div class="form_cages_block">
+        <div class="cage_form">
+            <form action="success/" method="post">
+                <fieldset>
+                    {% csrf_token %}
+                    {{ form }}
+                    <div>
+                        <label for="cage_id">Cage ID:</label>
+                        <input id="cage_id" type="number" name="cage_id" required>
+                    </div>
+                    <div>
+                        <label for="cage_capacity">Capacity</label>
+                        <input id="cage_capacity" type="number" name="cage_capacity" required>
+                    </div>
+                    <div>
+                        <label for="cage_material">Material</label>
+                        <input id="cage_material" type="text" name="cage_material" required>
+                    </div>
+                    <div>
+                        <label for="cage_color">Color</label>
+                        <input id="cage_color" type="text" name="cage_capacity" required>
+                    </div>
+                    <div>
+                        <label for="gerbil_house_id"> House ID:</label>
+                        <input id="gerbil_house_id" type="number" name="gerbil_house_id" required>
+                    </div>
+                    <button type="submit" value="Add Cage"> Add Cage </button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="available_cage_material">
+            <p class="material_disclaimer"> <b> Indicate Cage Material with abbreviations! </b> </p>
+            <ul>
+                <li> steel => stl </li>
+                <li> glass => glss </li>
+                <li> plastic => plstc </li>
+            </ul>
+        </div>
     </div>
     <div class="cage_block">
         {% for cage in cage_objects %}
