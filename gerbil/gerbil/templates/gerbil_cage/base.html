@@ -18,10 +18,6 @@
                     {% csrf_token %}
                     {{ form }}
                     <div>
-                        <label for="cage_id">Cage ID:</label>
-                        <input id="cage_id" type="number" name="cage_id" required>
-                    </div>
-                    <div>
                         <label for="cage_capacity">Capacity</label>
                         <input id="cage_capacity" type="number" name="cage_capacity" required>
                     </div>
@@ -53,11 +49,10 @@
     <div class="cage_block">
         {% for cage in cage_objects %}
         <div class="cage_box">
-            <h3>Cage </h3>
+            <h3>Cage {{ cage.cage_id}} </h3>
             <div> Capacity {{ cage.cage_capacity }} </div>
             <div> Material: {{ cage.cage_material }} </div>
             <div> Color: {{ cage.cage_color }} </div>
-            <div> Cage ID: {{ cage.cage_id }} </div>
             <div> Gerbil ID(s): {{ cage.gerbil_house_id_id }} </div>
         </div>
         {% endfor %}

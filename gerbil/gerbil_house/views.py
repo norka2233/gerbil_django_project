@@ -7,7 +7,7 @@ from .forms import AddHouseForm
 
 
 def index(request):
-    house_list = list(House.objects.all().values())
+    house_list = list(House.objects.all().values().order_by('-house_id'))
     template = loader.get_template('gerbil_house/base.html')
 
     context = {
@@ -18,10 +18,10 @@ def index(request):
 
 def add_house_form(request):
     if request.method == "POST":
-        form = AddHouseForm(request.POST)
+        form = AddHouseForm(request.POST or None)
         if form.is_valid():
             form.save()
-            return redirect('success')
+            return redirect('house_success')
     else:
         form: AddHouseForm()
-    return render(request, 'gerbil_house/success.html', {"form": form})
+    return render(request, 'gerbil_house/house_success.html', {"form": form})

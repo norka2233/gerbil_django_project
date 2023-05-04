@@ -29,10 +29,6 @@
                         <label for="house_color"> House Color: </label>
                         <input id="house_color" type="text" name="house_color" required>
                     </div>
-                    <div>
-                        <label for="house_id"> House ID:</label>
-                        <input id="house_id" type="number" name="house_id" required>
-                    </div>
                     <button type="submit" value="Add House"> Add House </button>
                 </fieldset>
             </form>
@@ -49,7 +45,7 @@
         {% for house in house_list %}
         <div class="house_box">
             <h3> House {{ house.house_id }}</h3>
-            <div> Capacity {{ house.cage_capacity }} </div>
+            <div> Capacity {{ house.house_capacity }} </div>
             <div> Material: {{ house.house_material }} </div>
             <div> Color: {{ house.house_color }} </div>
         </div>
