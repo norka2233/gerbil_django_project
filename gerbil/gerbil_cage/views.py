@@ -21,7 +21,7 @@ def add_cage_form(request):
         form = AddCageForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success')
+            return redirect('cage_success') # todo ffix this redirect too
     else:
         form: AddCageForm()
-    return render(request, 'gerbil_cage/success.html', {"form": form})
+    return render(request, 'gerbil_cage/cage_success.html', {"form": form})

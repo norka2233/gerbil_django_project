@@ -8,6 +8,7 @@
 *.pyc
 .idea/
 .DS_Store
+.dbeaver
 #/gerbil/gerbil_animal/migrations
 #/gerbil/gerbil_house/migrations
 #/gerbil/gerbil_cage/migrations
