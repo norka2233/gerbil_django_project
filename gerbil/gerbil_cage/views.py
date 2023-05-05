@@ -20,8 +20,9 @@ def add_cage_form(request):
     if request.method == "POST":
         form = AddCageForm(request.POST)
         if form.is_valid():
+            success_template = loader.get_template('gerbil_cage/cage_success.html')
             form.save()
-            return redirect('cage_success') # todo ffix this redirect too
+            return HttpResponse(success_template.render({}, request))
     else:
         form: AddCageForm()
     return render(request, 'gerbil_cage/cage_success.html', {"form": form})
