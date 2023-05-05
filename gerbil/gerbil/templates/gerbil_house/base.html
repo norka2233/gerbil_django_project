@@ -48,6 +48,8 @@
             <div> Capacity {{ house.house_capacity }} </div>
             <div> Material: {{ house.house_material }} </div>
             <div> Color: {{ house.house_color }} </div>
+            <a value="Delete" id="house_delete_btn" href="delete/{{ house.house_id }}"> Delete </a>
+
         </div>
         {% endfor %}
     </div>
