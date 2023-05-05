@@ -19,16 +19,6 @@ class Gerbil(models.Model):
     gerbil_house_id = models.ForeignKey('gerbil_house.House', on_delete=models.CASCADE)
     # gerbil_sex = models.TextChoices('male', 'female')
 
-    # @staticmethod
-    # def add_gerbil(gerbil_name, gerbil_id, gerbil_age, gerbil_color, gerbil_cage_id, gerbil_house_id):
-    #     gerbil = Gerbil(gerbil_name=gerbil_name, gerbil_id=gerbil_id, gerbil_age=gerbil_age, gerbil_color=gerbil_color, gerbil_cage_id=gerbil_cage_id, gerbil_house_id=gerbil_house_id)
-    #     try:
-    #         gerbil.save()
-    #         return gerbil
-    #     except (IntegrityError, AttributeError, DataError):
-    #         pass
-
-
     def eat(self):
         return "Gerbil eats"
 
