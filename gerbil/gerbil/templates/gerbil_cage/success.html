@@ -1,0 +1,20 @@
+{% extends 'gerbil_animal/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<html>
+    <link rel="stylesheet" href="{% static 'gerbil_animal/gerbilpage.css' %}">
+    <link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+    <title> Success </title>
+
+    <h1> Congrats, new cage was added successfully!</h1>
+
+    <button href="http://127.0.0.1:8000/cage/" id="return_to_cage_page" onclick="redirect_cages()"> Return to Cage(s) </button>
+
+    {% endblock %}
+</html>
