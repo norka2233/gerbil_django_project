@@ -24,8 +24,9 @@ def add_gerbil_form(request):
     if request.method == "POST":
         form = AddGerbilForm(request.POST)
         if form.is_valid():
+            success_template = loader.get_template('gerbil_animal/gerbil_success.html')
             form.save()
-            return redirect('success')
+            return HttpResponse(success_template.render({}, request))
     else:
         form = AddGerbilForm()
-    return render(request, 'gerbil_animal/success.html', {"form": form})
+    return render(request, 'gerbil_animal/gerbil_success.html', {"form": form})
