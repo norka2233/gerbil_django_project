@@ -70,11 +70,6 @@
                     <div>Cage ID: {{ gerbil.gerbil_cage_id}}</div>
                     <div>House ID: {{ gerbil.gerbil_house_id}}</div>
                     <div class="delete_gerbil_form">
-                        <!--                    <form action="delete/{{ gerbil.gerbil_id }}" method="post" >-->
-                        <!--                        {% csrf_token %}-->
-                        <!--&lt;!&ndash;                        <p> Are you sure you wanna delete gerbil {{ gerbil.gerbil_name }}? </p>&ndash;&gt;-->
-                        <!--                        <button type="submit"> Delete </button>-->
-                        <!--                    </form>-->
                         <a  href="{% url 'delete_gerbil_form' gerbil.gerbil_id %}" id="delete_text"> Delete </a>
                     </div>
                 </div>

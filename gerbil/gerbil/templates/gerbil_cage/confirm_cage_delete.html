@@ -1,0 +1,26 @@
+{% extends 'gerbil_animal/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<html>
+<link rel="stylesheet" href="{% static 'gerbil_animal/gerbilpage.css' %}">
+<link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
+<link rel="stylesheet" href="{% static 'gerbil_animal/confirm_gerbil_delete.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+<title> Success </title>
+
+<h1> Are you sure that you want to delete the cage? </h1>
+<div class="delete_confirm_box">
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" id="confirm">Yes, Delete</button>
+    </form>
+    <button href="http://127.0.0.1:8000/cage/" id="return_to_cage_page" onclick="redirect_cages()"> Return to Cage(s) </button>
+</div>
+
+{% endblock %}
+</html>
