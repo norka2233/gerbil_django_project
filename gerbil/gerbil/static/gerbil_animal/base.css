@@ -228,7 +228,7 @@ a::after {
   font-weight: bold;
 }
 
-a {
+#moving_mouse {
     flex-direction: column;
     position: absolute;
     margin-top : 25%;

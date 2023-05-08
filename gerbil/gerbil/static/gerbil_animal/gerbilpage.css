@@ -57,7 +57,7 @@ h1 {
     background-color: #F7C8E0;
     margin-left: 2%;
     width: 35%;
-    height: 70%;
+    height: 90%;
     font-family: Oswald;
     font-weight: bold;
     font-color: #777;
@@ -108,4 +108,17 @@ ul {
 label, input, button {
     margin: 0.5%;
     text-align: center;
+}
+
+#delete_text {
+    position: center;
+    font-weight: bold;
+    font-color: #777;
+    font-size: 0.9em;
+    color: red;
+    text-decoration: none;
+    border: inherit;
+    outline:none;
+    opacity: none;
+
 }
