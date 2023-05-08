@@ -55,6 +55,9 @@
             <div> Material: {{ cage.cage_material }} </div>
             <div> Color: {{ cage.cage_color }} </div>
             <div> House ID(s): {{ cage.gerbil_house_id_id }} </div>
+            <div class="delete_cage_form">
+                <a  href="{% url 'delete_cage_form' cage.cage_id %}" id="delete_cage"> Delete </a>
+            </div>
         </div>
         {% endfor %}
     </div>
