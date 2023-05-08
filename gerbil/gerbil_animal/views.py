@@ -1,7 +1,7 @@
 import datetime
 
-from django.http import HttpResponse
-from django.http import HttpResponseRedirect
+from django.contrib import messages
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template import loader
 from .models import Gerbil
@@ -14,9 +14,7 @@ from .forms import AddGerbilForm
 def index(request):
     gerbil_list = list(Gerbil.objects.all().values().order_by('-gerbil_id'))
     template = loader.get_template('gerbil_animal/gerbilpage.html')
-    context = {
-        'gerbil_list': gerbil_list,
-    }
+    context = {'gerbil_list': gerbil_list}
     return HttpResponse(template.render(context, request))
 
 
@@ -30,3 +28,20 @@ def add_gerbil_form(request):
     else:
         form = AddGerbilForm()
     return render(request, 'gerbil_animal/gerbil_success.html', {"form": form})
+
+
+def delete_gerbil_form(request, gerbil_id):
+    gerbil = get_object_or_404(Gerbil, pk=gerbil_id)
+    context = {'gerbil': gerbil}
+    success_template = loader.get_template('gerbil_animal/gerbilpage.html')
+
+    if request.method == 'GET':
+        return render(request, 'gerbil_animal/confirm_gerbil_delete.html', context)
+    elif request.method == 'POST':
+        gerbil.delete()
+        messages.success(request, "Gerbil has been removed.")
+        return render(request, 'gerbil_animal/confirm_gerbil_delete.html', context)
+    return HttpResponse(success_template.render({}, request))
+
+
+
