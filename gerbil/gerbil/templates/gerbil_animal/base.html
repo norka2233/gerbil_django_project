@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        {% bootstrap_messages %}
+        {% load static %}
+        <link rel="shortcut icon" type="image/ico" href="{% static 'pictures/gerbil_favicon.ico' %}"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="navigation_bar" id="navbar">
+            <input type="checkbox" id="ham-menu">
+            <label for="ham-menu">
+                <div class="hide-des">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </div>
+
+            </label>
+            <div class="full-page-green"></div>
+            <div class="ham-menu">
+                <ul class="centre-text bold-text">
+                    <li href="http://127.0.0.1:8000/gerbil/" id="gerbils" onclick="redirect_gerbils()">Gerbils</li>
+                    <li href="http://127.0.0.1:8000/cage/" id="cages" onclick="redirect_cages()">Cages</li>
+                    <li href="http://127.0.0.1:8000/house/" id="houses" onclick="redirect_houses()">Houses</li>
+                </ul>
+                <div class="animated_animal">
+                    <a id="moving_mouse"> <img src="https://www.animatedimages.org/data/media/213/animated-mouse-image-0079.gif" alt="animated-mouse-image-0079" /></a>
+                </div>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+<!--        <script src="{% static 'gerbil_animal/gerbilpage.js' %}"></script>-->
+    </body>
+    <script>
+    const link="http://127.0.0.1:8000/"
+        function redirect_gerbils() {
+            var url=document.getElementById('gerbils').value
+            window.location = link + "gerbil/"
+        }
+
+        function redirect_cages() {
+            var url=document.getElementById('cages').value
+            window.location = link + "cage/"
+        }
+
+        function redirect_houses() {
+            var url=document.getElementById('houses').value
+            window.location = link + "house/"
+        }
+    </script>
+</html>

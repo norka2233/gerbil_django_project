@@ -1,0 +1,114 @@
+{% extends 'gerbil_animal/base.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+    <link rel="stylesheet" href="{% static 'gerbil_animal/gerbilpage.css' %}">
+    <link rel="stylesheet" href="{% static 'gerbil_animal/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+    <title>Gerbil Page</title>
+    <div class="gerbil_page_text">
+        <h1><b>     🄷🄴🅁🄴 🅈🄾🅄 🄲🄰🄽 🄵🄸🄽🄳 🄰  🄾🄵 🅈🄾🅄🅁 🄶🄴🅁🄱🄸🄻 🄻🄸🅂🅃 </b> </h1>
+    </div>
+    <div class="form_color_block">
+        <div class="gerbil_form">
+            <form action="success/" method="post">
+                <fieldset>
+                    {% csrf_token %}
+                    {{ form }}
+                <div>
+                    <label for="gerbil_name"> Name: </label>
+                    <input id="gerbil_name" type="text" name="gerbil_name" maxlength="100" required>
+                </div>
+                <div>
+                    <label for="gerbil_age"> Age: </label>
+                    <input id="gerbil_age" type="number" name="gerbil_age" required>
+                </div>
+                <div>
+                    <label for="gerbil_color"> Color: </label>
+                    <input id="gerbil_color" type="text" name="gerbil_color" required>
+                </div>
+                <div>
+                    <label for="gerbil_cage_id"> Cage ID: </label>
+                    <input id="gerbil_cage_id" type="number" name="gerbil_cage_id" required>
+                </div>
+                <div>
+                    <label for="gerbil_house_id"> House ID: </label>
+                    <input id="gerbil_house_id" type="number" name="gerbil_house_id" required>
+                </div>
+                    <button type="submit" value="Add Gerbil"> Add Gerbil </button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="available_gerbil_color">
+            <p class="color_disclaimer"> <b> Indicate Gerbil color with abbreviations! </b> </p>
+            <ul>
+                <li> white => wht </li>
+                <li> gold => gld </li>
+                <li> black => blck </li>
+                <li>grey => gr </li>
+                <li> brown => brwn </li>
+                <li> not indicated => N/A</li>
+            </ul>
+        </div>
+    </div>
+    <div class="profiles_block">
+        {% for gerbil in gerbil_list %}
+        <div class="profile_box">
+            <div class="profile_picture">
+                <img class="gerbil_picture_file" src="{% static 'pictures/1_red_gerbil.jpeg' %}" alt="gerbil_logo" class="gerbil_logo" onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">
+            </div>
+            <div class="profile_text_info">
+                <div class="profile_point">
+                    <div>{{ gerbil.gerbil_name }}</div>
+                    <div> ID: {{ gerbil.gerbil_id }}</div>
+                    <div>{{ gerbil.gerbil_age }} year(s)</div>
+                    <div>{{ gerbil.gerbil_color }} </div>
+                    <div>Cage ID: {{ gerbil.gerbil_cage_id}}</div>
+                    <div>House ID: {{ gerbil.gerbil_house_id}}</div>
+                    <div class="delete_gerbil_form">
+                        <a  href="{% url 'delete_gerbil_form' gerbil.gerbil_id %}" id="delete_text"> Delete </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</html>
+
+<!--    <div class="profile_box">-->
+<!--        <div class="profile_picture">-->
+<!--            <img class="gerbil_picture_file" src="{% static 'pictures/2_black_gerbil.jpeg' %}" alt="gerbil_logo" class="gerbil_logo" onclick="location.href = 'http://127.0.0.1:8000/';" style="cursor: pointer;">-->
+<!--        </div>-->
+<!--        <div class="profile_text_info">-->
+<!--            <div class="profile_point">-->
+<!--                <div> {{ gerbil.name }} </div>-->
+<!--                <div> ID: {{ gerbil.gerbil_id }}</div>-->
+<!--                <div>{{ gerbil.age }} year(s)</div>-->
+<!--                <div>{{ gerbil.color }} </div>-->
+<!--                <div>{{ gerbil.gerbil_sex }}</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    </div>div-->
+<!--</div>-->
+
+<!--        {% if gerbil_list %}-->
+<!--        <ul>-->
+<!--            {% for gerbil in gerbil_list%}-->
+<!--            <li>{{gerbil.name}}</li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
+<!--        {% else %}-->
+<!--        <p> No available </p>-->
+<!--        {% endif %}-->
+
+
+
+
+

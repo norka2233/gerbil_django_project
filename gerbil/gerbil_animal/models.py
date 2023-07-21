@@ -1,26 +1,23 @@
 from django.db import models
+from django.db import models, IntegrityError, DataError
 
 
 class Gerbil(models.Model):
-
-    GERBIL_COLOR = (
-        ('WH', 'white'),
-        ('GD', 'gold'),
-        ('BLCK', 'black'),
-        ('GR', 'grey'),
-        ('BN', 'brown')
-    )
-
-    GERBIL_SEX = (
-        ('f', 'female'),
-        ('m', 'male')
-    )
-
-    name = models.CharField(max_length=30)
-    color = models.CharField(max_length=5, choices=GERBIL_COLOR)
-    age = models.IntegerField()
-    sex = models.CharField(max_length=2, choices=GERBIL_SEX)
-    id = models.BigAutoField(primary_key=True)
+    GERBIL_COLOR_CHOICES = [
+        ('wht', 'white'),
+        ('gld', 'gold'),
+        ('blck', 'black'),
+        ('gr', 'grey'),
+        ('brw', 'brown'),
+        ('N/A', 'not indiated')
+    ]
+    gerbil_name = models.CharField(max_length=30, null=False)
+    gerbil_age = models.IntegerField(null=False)
+    gerbil_id = models.BigAutoField(primary_key=True)
+    gerbil_color = models.CharField(choices=GERBIL_COLOR_CHOICES, max_length=5, null=False, default='N/A')
+    gerbil_cage_id = models.ForeignKey('gerbil_cage.Cage', on_delete=models.CASCADE)
+    gerbil_house_id = models.ForeignKey('gerbil_house.House', on_delete=models.CASCADE)
+    # gerbil_sex = models.TextChoices('male', 'female')
 
     def eat(self):
         return "Gerbil eats"

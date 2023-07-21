@@ -1,13 +1,18 @@
 from django.db import models
 
+
 class Cage(models.Model):
-
     CAGE_MATERIAL = [
-        ('ST', 'steel'),
-        ('GL', 'glass'),
-        ('PL', 'plastic')
+        ('stl', 'steel'),
+        ('glss', 'glass'),
+        ('plstc', 'plastic')
     ]
+    cage_capacity = models.IntegerField()
+    cage_color = models.CharField(max_length=30)
+    cage_id = models.BigAutoField(primary_key=True)
+    gerbil_house_id = models.ForeignKey('gerbil_house.House', on_delete=models.CASCADE)
+    cage_material = models.CharField(max_length=30, choices=CAGE_MATERIAL, null=False)
 
-    capacity = models.IntegerField()
-    material = models.CharField(max_length=30, choices=CAGE_MATERIAL)
-    color = models.CharField(max_length=30)
+
+
+
