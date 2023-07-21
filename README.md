@@ -13,7 +13,7 @@
 
 `source venv/bin/activate`
 
-4Install all needed packages by running:
+4.Install all needed packages by running:
 
 `(venv) pip install -r requirements.txt`
 
