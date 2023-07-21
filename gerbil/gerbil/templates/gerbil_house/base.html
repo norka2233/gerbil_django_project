@@ -48,8 +48,9 @@
             <div> Capacity {{ house.house_capacity }} </div>
             <div> Material: {{ house.house_material }} </div>
             <div> Color: {{ house.house_color }} </div>
-            <a value="Delete" id="house_delete_btn" href="delete/{{ house.house_id }}"> Delete </a>
-
+           <div class="delete_house_form">
+               <a href="{% url 'delete_house_form' house.house_id %}" id="delete_house"> Delete </a>
+           </div>
         </div>
         {% endfor %}
     </div>

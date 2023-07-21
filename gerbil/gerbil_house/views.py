@@ -4,6 +4,8 @@ from django.template import loader
 from django.shortcuts import render, redirect
 from .models import House
 from .forms import AddHouseForm
+from django.shortcuts import get_object_or_404
+from django.contrib import messages
 from django.urls import reverse
 
 
@@ -29,11 +31,15 @@ def add_house_form(request):
     return render(request, 'gerbil_house/house_success.html', {"form": form})
 
 
-def delete_house(request, id):
-    if request.method == "POST":
-        house_list = House.objects.all().get(id=id)
-        house_list.delete()
-    else:
-        house_list: AddHouseForm()
-    # return HttpResponseRedirect(reverse('index'))
-    return render(request, 'gerbil_house/base.html', {"house_list": house_list})
+def delete_house_form(request, house_id):
+    house = get_object_or_404(House, pk=house_id)
+    context = {'house': house}
+    success_template = loader.get_template('gerbil_house/base.html')
+
+    if request.method == "GET":
+        return render(request, 'gerbil_house/confirm_house_delete.html', context)
+    elif request.method == 'POST':
+        house.delete()
+        messages.success(request, "House has been removed.")
+        return render(request, 'gerbil_house/confirm_house_delete.html', context)
+    return HttpResponse(success_template.render({}, request))
